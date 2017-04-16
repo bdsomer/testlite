@@ -1,0 +1,26 @@
+{
+  "name": "testlight",
+  "version": "1.0.0",
+  "description": "Easy, lightweight testing",
+  "main": "index.js",
+  "scripts": {
+    "test": "node tests/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/javacoolme/testlite.git"
+  },
+  "keywords": [
+    "test",
+    "lightweight",
+    "easy",
+    "unit",
+    "testing"
+  ],
+  "author": "Bennett Somerville",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/javacoolme/testlite/issues"
+  },
+  "homepage": "https://github.com/javacoolme/testlite#readme"
+}
