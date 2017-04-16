@@ -159,14 +159,10 @@ module.exports.test = (endOnFirstFail) => {
 								runSubSubTests(callback);
 							};
 
-							subTests[currentSubTest][currentSubSubTest](desc => {
-
-								// Run the sub-test
-
-								description = desc;
-
-								
-							}).then(() => {
+							/**
+							 * The function to be run if the test succeeds.
+							 */
+							const onSuccess = () => {
 
 								// Increment `passed`
 
@@ -180,7 +176,13 @@ module.exports.test = (endOnFirstFail) => {
 
 								next();
 
-							}, err => {
+							}
+
+							/**
+							 * The function to be run if the test fails.
+							 * @param {Error} err The error that occured.
+							 */
+							const onError = err => {
 
 								// Increment `failed`
 
@@ -197,7 +199,40 @@ module.exports.test = (endOnFirstFail) => {
 								// Run the next sub-sub test.
 
 								next();
-							});
+							};
+
+							// Wrap in a try-catch in case the test is synchronous
+
+							/**
+							 * The value that the test returned.
+							 */
+							var returnValue;
+							try {
+								returnValue = subTests[currentSubTest][currentSubSubTest](desc => {
+
+									// Set the description
+
+									description = desc;
+								});
+							} catch (err) {
+
+								// The synchronous test failed, count an error an continue
+
+								onError(err);
+								return;
+							}
+
+							if (returnValue) {
+
+								// The test was asynchronous and returned a promise
+
+								returnValue.then(onSuccess, onError);
+							} else {
+
+								// The test was synchronous and finished without error, count a success and continue
+
+								onSuccess();
+							}
 						} else {
 
 							// If so, call back

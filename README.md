@@ -19,19 +19,13 @@ module.exports = {
 	'exports' : [
 		it => {
 			it('should add two numbers');
-			return new Promise((resolve) => {
-				assert.strictEqual(add(1, 2), 3);
-				assert.strictEqual(add(4, 5), 9);
-				resolve();
-			});
+			assert.strictEqual(add(1, 2), 3);
+			assert.strictEqual(add(4, 5), 9);
 		}, it => {
 			it('should return NaN if one of the arguments is NaN');
-			return new Promise((resolve) => {
-				assert.strictEqual(add(NaN, 2), NaN);
-				assert.strictEqual(add(parseInt('...'), 5), NaN);
-				assert.strictEqual(add(NaN, NaN), NaN);
-				resolve();
-			});
+			assert.strictEqual(add(NaN, 2), NaN);
+			assert.strictEqual(add(parseInt('...'), 5), NaN);
+			assert.strictEqual(add(NaN, NaN), NaN);
 		}
 	]
 };
@@ -54,5 +48,7 @@ Note that it is **extremely** important to call `tl.test()` or else nothing will
 		- The value is an array of functions that test this functionality. Arguments and return values for this function are as follows:
 			- `it: Function` - the function that is used to describe the test. This should always be the first instruction of the test.
 				- `description: String` - the description that is to be used.
-			- **returns** a promise. A promise that resolves means success, a promise that rejects means failure.
+			- **returns**
+				- Nothing, if the test is synchronous.
+				- If the test is asynchronous, a promise. A promise that resolves means success, a promise that rejects means failure.
 - `require('testlite').test: Function` - the function to be called to start testing.
