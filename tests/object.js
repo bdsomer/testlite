@@ -2,8 +2,8 @@ const assert = require('assert');
 
 module.exports = {
 	'keys()' : [
-		describe => {
-			describe('should return the keys of an object');
+		it => {
+			it('should return the keys of an object');
 			return new Promise((resolve) => {
                 const objectKeys = Object.keys({
 					'oneKey'		: 'oneValue',
@@ -15,8 +15,8 @@ module.exports = {
 			});
 		}
 	], 'assign()' : [
-		describe => {
-			describe('should merge two objects together');
+		it => {
+			it('should merge two objects together');
 			return new Promise((resolve) => {
 				assert.deepEqual(Object.assign({
 					'oneKey'		: 'oneValue',
@@ -33,8 +33,8 @@ module.exports = {
 				resolve();
 			});
 		},
-		describe => {
-			describe('elements later should take priority');
+		it => {
+			it('should let elements later take priority');
 			return new Promise((resolve) => {
 				assert.deepEqual(Object.assign({
 					'oneKey'		: 'oneValue',

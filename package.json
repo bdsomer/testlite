@@ -1,6 +1,6 @@
 {
   "name": "testlite",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Easy, lightweight testing",
   "main": "index.js",
   "scripts": {
