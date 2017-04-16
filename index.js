@@ -147,7 +147,7 @@ module.exports.test = (endOnFirstFail) => {
 							 */
 							const logWithColorCode = (message, code) => {
 								console.log(code + message + /* Reset the color! */ '\x1b[0m');
-							}
+							};
 
 							/**
 							 * Runs the next sub-sub test.
