@@ -188,9 +188,11 @@ module.exports.test = (endOnFirstFail) => {
 
 								failed++;
 
-								// Log the descriptionin red with an ✗ and the error message
+								// Log the description in red with an ✗
 
-								logWithColorCode('\t\t' + description + ' ✗: ' + err.toString(), '\x1b[31m');
+								logWithColorCode('\t\t' + description + ' ✗: ', '\x1b[31m');
+
+								console.error(err);
 
 								// Callback immediately if `endOnFirstFail` is true
 
