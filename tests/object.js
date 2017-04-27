@@ -1,9 +1,8 @@
 const assert = require('assert');
 
 module.exports = {
-	'keys()' : [
-		it => {
-			it('should return the keys of an object');
+	'keys()' : {
+		'should return the keys of an object': () => {
 			const objectKeys = Object.keys({
 				'oneKey'		: 'oneValue',
 				'anotherKey'	: 'anotherValue'
@@ -11,9 +10,8 @@ module.exports = {
 			assert.equal(objectKeys[0], 'oneKey');
 			assert.equal(objectKeys[1], 'anotherKey');
 		}
-	], 'assign()' : [
-		it => {
-			it('should merge two objects together');
+	}, 'assign()' : {
+		'should merge two objects together': () => {
 			assert.deepEqual(Object.assign({
 				'oneKey'		: 'oneValue',
 				'anotherKey'	: 'anotherValue'
@@ -26,9 +24,7 @@ module.exports = {
 				'someOtherKey'	: 'someOtherValue',
 				'foo'			: 'bar'
 			});
-		},
-		it => {
-			it('should let elements later take priority');
+		}, 'should let elements later take priority': () => {
 			assert.deepEqual(Object.assign({
 				'oneKey'		: 'oneValue',
 				'anotherKey'	: 'anotherValue'
@@ -41,5 +37,5 @@ module.exports = {
 				'anotherKey'	: 'notAnotherValue'
 			});
 		}
-	]
+	}
 };

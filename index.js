@@ -129,16 +129,31 @@ module.exports.test = (endOnFirstFail) => {
 					 */
 					const runSubSubTests = (callback) => {
 
+						/**
+						 * The sub-sub test descriptions.
+						 */
+						const subSubTestDescriptions = Object.keys(subTests[currentSubTest]);
+
+						/**
+						 * The sub-sub tests.
+						 */
+						const subSubTests = Object.values(subTests[currentSubTest]);
+
 						// Check if all sub-sub-tests have been run
 
-						if (currentSubSubTest < subTests[currentSubTest].length) {
+						if (currentSubSubTest < subSubTests.length) {
 
-							// Run the sub-sub test with the describe function
+							// Run the sub-sub test
 
 							/**
 							 * The description of this sub-sub test.
 							 */
-							var description = '';
+							const description = subSubTestDescriptions[currentSubSubTest];
+
+							/**
+							 * The current sub-sub test.
+							 */
+							const subSubTest = subSubTests[currentSubSubTest];
 							
 							/**
 							 * Logs to console with the specified color code.
@@ -210,12 +225,10 @@ module.exports.test = (endOnFirstFail) => {
 							 */
 							var returnValue;
 							try {
-								returnValue = subTests[currentSubTest][currentSubSubTest](desc => {
 
-									// Set the description
+								// Run the test
 
-									description = desc;
-								});
+								returnValue = subSubTest();
 							} catch (err) {
 
 								// The synchronous test failed, count an error an continue

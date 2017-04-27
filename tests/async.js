@@ -2,9 +2,8 @@ const assert = require('assert');
 const fs = require('fs');
 
 module.exports = {
-	'readFile()' : [
-		it => {
-			it('should read the data of a file asynchronously');
+	'readFile()' : {
+		'should read the data of a file asynchronously': () => {
 			return new Promise((resolve, reject) => {
 				fs.readFile('tests/testFile.txt', (err, data) => {
 					if (err) {
@@ -15,9 +14,7 @@ module.exports = {
 					}
 				});
 			});
-		},
-		it => {
-			it('should callback with an error if the file does not exist');
+		}, 'should callback with an error if the file does not exist': () => {
 			return new Promise((resolve, reject) => {
 				fs.readFile('tests/nonExistentFile.txt', (err) => {
 					if (err) {
@@ -28,5 +25,5 @@ module.exports = {
 				});
 			});
 		}
-	]
+	}
 };
