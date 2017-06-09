@@ -191,7 +191,7 @@ module.exports.test = (endOnFirstFail) => {
 
 								next();
 
-							}
+							};
 
 							/**
 							 * The function to be run if the test fails.
