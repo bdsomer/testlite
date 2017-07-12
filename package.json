@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/javacoolme/testlite/issues"
   },
-  "homepage": "https://github.com/javacoolme/testlite#readme"
+  "homepage": "https://github.com/javacoolme/testlite#readme",
+  "engines" : {
+    "node" : ">=6.0.0"
+  }
 }
