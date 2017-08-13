@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/javacoolme/testlite.git"
+    "url": "git+https://github.com/bdsomer/testlite.git"
   },
   "keywords": [
     "test",
@@ -20,9 +20,9 @@
   "author": "Bennett Somerville",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/javacoolme/testlite/issues"
+    "url": "https://github.com/bdsomer/testlite/issues"
   },
-  "homepage": "https://github.com/javacoolme/testlite#readme",
+  "homepage": "https://github.com/bdsomer/testlite#readme",
   "engines" : {
     "node" : ">=6.0.0"
   }
