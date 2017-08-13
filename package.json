@@ -1,6 +1,6 @@
 {
   "name": "testlite",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Easy, lightweight testing",
   "main": "index.js",
   "scripts": {
@@ -23,7 +23,7 @@
     "url": "https://github.com/bdsomer/testlite/issues"
   },
   "homepage": "https://github.com/bdsomer/testlite#readme",
-  "engines" : {
-    "node" : ">=6.0.0"
+  "engines": {
+    "node": ">=6.0.0"
   }
 }
